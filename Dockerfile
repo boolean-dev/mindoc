@@ -91,5 +91,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ENV ZONEINFO=/mindoc/lib/time/zoneinfo.zip
 RUN chmod +x start.sh
+run chmod +x mindoc_linux_amd64
 
 CMD ["./start.sh"]
