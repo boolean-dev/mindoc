@@ -105,9 +105,9 @@ func GetDefaultCover() string {
 
 //获取允许的商城文件的类型.
 func GetUploadFileExt() []string {
-	ext := beego.AppConfig.DefaultString("upload_file_ext", "png|jpg|jpeg|gif|txt|doc|docx|pdf")
+	ext := beego.AppConfig.DefaultString("upload_file_ext", "png,jpg,jpeg,gif,txt,doc,docx,pdf")
 
-	temp := strings.Split(ext, "|")
+	temp := strings.Split(ext, ",")
 
 	exts := make([]string, len(temp))
 
