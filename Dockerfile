@@ -33,9 +33,9 @@ ADD . /go/src/github.com/lifei6671/mindoc
 
 WORKDIR /go/src/github.com/lifei6671/mindoc
 
-RUN	 go get -u github.com/golang/dep/cmd/dep && dep ensure  && \
-	CGO_ENABLE=1 go build -v -a -o mindoc_linux_amd64 -ldflags="-w -s -X main.VERSION=$TAG -X 'main.BUILD_TIME=`date`' -X 'main.GO_VERSION=`go version`'" && \
-    rm -rf commands controllers models modules routers tasks vendor docs search data utils graphics .git Godeps uploads/* .gitignore .travis.yml Dockerfile gide.yaml LICENSE main.go README.md conf/enumerate.go conf/mail.go install.lock simsun.ttc
+# RUN	 go get -u github.com/golang/dep/cmd/dep && dep ensure  && \
+#	CGO_ENABLE=1 go build -v -a -o mindoc_linux_amd64 -ldflags="-w -s -X main.VERSION=$TAG -X 'main.BUILD_TIME=`date`' -X 'main.GO_VERSION=`go version`'" && \
+#    rm -rf commands controllers models modules routers tasks vendor docs search data utils graphics .git Godeps uploads/* .gitignore .travis.yml Dockerfile gide.yaml LICENSE main.go README.md conf/enumerate.go conf/mail.go install.lock simsun.ttc
 
 ADD start.sh /go/src/github.com/lifei6671/mindoc
 ADD simsun.ttc /usr/share/fonts/win/
