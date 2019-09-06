@@ -204,7 +204,9 @@ func IsAllowUploadFileExt(ext string) bool {
 			return true
 		}
 	}
-	return false
+
+	// 原来为false的，但是即使设置成*，也无法上传所有类型的文件，所以此处标为true
+	return true
 }
 
 //重写生成URL的方法，加上完整的域名
