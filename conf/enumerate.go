@@ -105,9 +105,9 @@ func GetDefaultCover() string {
 
 //获取允许的商城文件的类型.
 func GetUploadFileExt() []string {
-	ext := beego.AppConfig.DefaultString("upload_file_ext", "png|jpg|jpeg|gif|txt|doc|docx|pdf")
+	ext := beego.AppConfig.DefaultString("upload_file_ext", "txt;doc;docx;xls;xlsx;ppt;pptx;pdf;7z;rar;jpg;jpeg;png;gif;zip")
 
-	temp := strings.Split(ext, "|")
+	temp := strings.Split(ext, ";")
 
 	exts := make([]string, len(temp))
 
@@ -204,9 +204,7 @@ func IsAllowUploadFileExt(ext string) bool {
 			return true
 		}
 	}
-
-	// 原来为false的，但是即使设置成*，也无法上传所有类型的文件，所以此处标为true
-	return true
+	return false
 }
 
 //重写生成URL的方法，加上完整的域名
